@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="../js/jquery-3.7.0.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body id="body">
+    <div class="wrapper circle left"></div>
+    <div class="wrapper circle right"></div>
+    <div class="wrapper line"></div>
+    <div class="wrapper boxUpper"></div>
+    <div class="wrapper boxLower"></div>
+    <div class="wrapper boxCenter"></div>
+    <div class="wrapper circle openingBox" onclick="clickPoint();"></div>
+    <div class="tempCover"></div>
+    
+    <div class="settingCover"></div>
+    <div class="colorSettingCover"></div>
+    <div class="colorSettingCover"></div>
+    <div class="colorSettingCover"></div>
+    <div class="colorSettingCover"></div>
+
+    <div class="parentPage">
+        <div class="mainPage" id="container">
+            <nav class="menu">
+                <div class="mainTo_aboutMe circleMenu colorPointer1" id="aboutMe" onclick="menuClicked1(this);"></div>
+                <p class="aboutMeMenuStyle text textColorPointer1">About Me</p>
+                <div class="mainTo_aboutMe decoPoint colorPointer1"></div>
+                <div class="quarter-circle firstQC colorPointer1"></div>
+                <div class="quarter-circle firstBackQC"></div>
+                <div class="quarter-line firstQL colorPointer1"></div>
+
+            </nav>
+            <nav class="menu">
+                <div class="mainTo_journey circleMenu colorPointer2" id="journey" onclick="menuClicked1(this);"></div>
+                <p class="journeyMenuStyle text textColorPointer2">Works</p>
+                <div class="mainTo_journey decoPoint colorPointer2"></div>
+                <div class="quarter-circle secondQC colorPointer2"></div>
+                <div class="quarter-circle secondBackQC"></div>
+                <div class="quarter-line secondQL colorPointer2"></div>
+            </nav>
+            <nav class="menu">
+                <div class="mainTo_devRoadmap circleMenu colorPointer3" id="devRoadmap" onclick="menuClicked1(this);">
+                </div>
+                <p class="devRoadmapMenuStyle text textColorPointer3">Dev Roadmap</p>
+                <div class="mainTo_devRoadmap decoPoint colorPointer3"></div>
+                <div class="quarter-circle thirdQC colorPointer3"></div>
+                <div class="quarter-circle thirdBackQC"></div>
+                <div class="quarter-line thirdQL colorPointer3"></div>
+            </nav>
+            <nav class="menu">
+                <div class="mainTo_signUp circleMenu colorPointer4" id="signUp" onclick="menuClicked2(this);"></div>
+                <p class="signUpMenuStyle text textColorPointer4">Sign Up</p>
+                <div class="mainTo_signUp decoPoint colorPointer4"></div>
+                <div class="quarter-circle forthQC colorPointer4"></div>
+                <div class="quarter-circle forthBackQC"></div>
+                <div class="quarter-line forthQL colorPointer4"></div>
+            </nav>
+
+            <nav class="colorSelectorParent">
+                <div class="colorSelectorWrapper">
+                    <span class="selector menuTag">select menu</span>
+                    <div class="colorSelectorWrapper2">
+                        <span id="aboutMeColorSelector" class="colorSelector" onclick="menuSelected(this)">
+                            <div class="colorCircle 913636"></div>About Me
+                        </span>
+                        <span id="journeyColorSelector" class="colorSelector" onclick="menuSelected(this)">
+                            <div class="colorCircle a78c6a"></div>Works
+                        </span>
+                        <span id="devRoadmapColorSelector" class="colorSelector" onclick="menuSelected(this)">
+                            <div class="colorCircle 005757"></div>Dev Roadmap
+                        </span>
+                        <span id="signUpColorSelector" class="colorSelector" onclick="menuSelected(this)">
+                            <div class="colorCircle 496682"></div>Sign Up
+                        </span>
+                    </div>
+                    <span class="selector">select color</span>
+                    <div class="sampleColorBox">
+                        <div id="color_f08080_913636" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_e99d6a_B8692C" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_deb887_a78c6a" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_89b97a_518C3F" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_57b19d_267866" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_008080_005757" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_7cb4ce_3D7A96" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_5485f0_2953AD" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_6a5acd_4835BA" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_a370f5_6A3EB0" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_ca7bc6_A651A1" class="sampleColor" onclick="colorSelected(this)"></div>
+                        <div id="color_778899_496682" class="sampleColor" onclick="colorSelected(this)"></div>
+                    </div>
+                    <div class="warningBox">
+                        <span class="warningMsg">
+                            <span class="material-symbols-rounded warningMsgIcon">warning</span>
+                            Please select a menu first
+                        </span>
+                    </div>
+                    <button id="okButton" class="okButton settingButton">OK</button>
+                    <button id="cancelButton" class="cancelButton settingButton">Cancel</button>
+                </div>
+            </nav>
+            <header>
+                <h1 class="mainHeader">Hello!</h1>
+                <nav class="loginBox">
+                    <input type="text" id="id" placeholder="ID" class="loginStyle">
+                    <input type="password" id="password" placeholder="Password" class="loginStyle">
+                    <nav class="loginIconWrapper hover" onclick="loginClicked()">
+                        <span class="material-symbols-rounded loginIcon">login</span>
+                    </nav>
+                    <nav class="settingIconWrapper hover" onclick="settingClicked()">
+                        <span class="material-symbols-rounded settingIcon">settings</span>
+                    </nav>
+                    <div class="loginSuccess">
+                        <span class="material-symbols-rounded loginInfoIcon">person</span>
+                        <span class="loginInfoText">sample</span>
+                        <span class="material-symbols-rounded logoutIcon hover" onclick="logoutClicked()">logout</span>
+                    </div>
+                    <div class="loginFail">
+                        <span class="material-symbols-rounded loginFailedIcon">error</span>
+                        <span class="LoginFailedText">Login Failed!</span>
+                    </div>
+                </nav>
+                <div class="bar mainBar"></div>
+            </header>
+            <section>
+                <article>
+
+                </article>
+            </section>
+
+        </div>
+
+
+        <div class="aboutMe subPage page">
+            <header class="color_aboutMe">
+                <nav class="backIcon" id="aboutMe" onclick="backIconClicked(this);">
+                    <span class="material-symbols-rounded triangle">play_arrow</span>
+                </nav>
+                <h1>About Me</h1>
+                <div class="bar subcolorPointer1"></div>
+            </header>
+            <main>
+                <article class="profileImage">
+                    <div class="profileImageWrapper1 colorPointer1">
+                        <div class="profileImageWrapper2">
+
+                        </div>
+                    </div>
+                </article>
+                <article class="profileContent">
+                    <div class="nameWrapper">
+                        <span class="material-symbols-rounded profileNameIcon textColorPointer1">badge</span>
+                        <span class="profileNameText textSubColorPointer1">Kim Dongchan</span>
+                    </div>
+                    <div class="locationWrapper">
+                        <span class="material-symbols-rounded profileLocationIcon textColorPointer1">location_on</span>
+                        <span class="profileLocationText textSubColorPointer1">Seucho, Seoul</p>
+                    </div>
+                    <div class="telWrapper">
+                        <span class="material-symbols-rounded profilePhoneIcon textColorPointer1">smartphone</span>
+                        <span class="profilePhoneText textSubColorPointer1">010-9379-8179</p>
+                    </div>
+                    <div class="emailWrapper">
+                        <span class="material-symbols-rounded profileEmailIcon textColorPointer1">mail</span>
+                        <span class="profileEmailText textSubColorPointer1">kdc1997@naver.com</span>
+                    </div>
+                </article>
+            </main>
+        </div>
+
+        <div class="journey subPage page">
+            <header class="color_journey">
+                <nav class="backIcon" id="journey" onclick="backIconClicked(this);">
+                    <span class="material-symbols-rounded triangle">play_arrow</span>
+                </nav>
+                <h1>Works</h1>
+                <div class="bar subcolorPointer2"></div>
+            </header>
+            <main>
+                <article class="clockWrapper colorPointer2">
+                    <section class="clock">
+                        <div class="rectangle1 subcolorPointer2"></div>
+                        <div class="rectangle2 subcolorPointer2"></div>
+                        <div class="rectangle3 subcolorPointer2"></div>
+                        <div class="rectangle4 subcolorPointer2"></div>
+                        <div class="rectangle5 subcolorPointer2"></div>
+                        <div class="rectangle6 subcolorPointer2"></div>
+                        <div class="clockCircle"></div>
+                        <span class="equation equation1">\(e^{2\pi i}\)</span>
+                        <span class="equation equation2">\(exp\left(\sum\limits_{n=1}^{\infty}\frac{{(-1)^{n+1}}}{n}\right)\)</span>
+                        <span class="equation equation3">\(\lfloor(\int_{-\infty}^{\infty} e^{-x^2} \,dx)^2\rfloor\)</span>
+                        <span class="equation equation4">\(|\mathbb{Z}_8| = \phi(8)\)</span>
+                        <span class="equation equation5">\(\sec^2(\tan^{-1}(2))\)</span>
+                        <span class="equation equation6">\(\frac{\pi}{arcsin \frac{1}{2}}\)</span>
+                        <span class="equation equation7">\(\sqrt{\text{det}\left(\begin{array}{ccc} 0 & 6 & 1 \\ 0 & 5 & 2 \\ 7 & 4 & 3 \end{array}\right)}\)</span>
+                        <span class="equation equation8">\(\left( \sum\limits_{n=0}^{\infty} \left( \frac{(-1)^n \left(\frac{\pi}{6}\right)^{2n+1}}{(2n+1)!} \right) \right)^{-3}\)</span>
+                        <span class="equation equation9">\({6 + \sqrt{6 + \sqrt{6 + \ldots}}}\)</span>
+                        <div class="equation equation10">
+                            <span class="equation10_1">\(\dim \{ A \in M^{5 \times 5}(\mathbb{R}) \mid\)</span><br>
+                            <span class="equation10_2">\(A + A^t = 0\}\)</span>
+                        </div>
+                        <span class="equation equation11">\(\oint\limits_{x^2 + y^2 = 11} \frac{{xdy - ydx}}{{2\pi}}\)</span>
+                        <span class="equation equation12">\(\sum\limits_{n=0}^{6} \int\limits_{|z|=6} \frac{\pi i(z-n)}{dz}\)</span>
+
+                        <div class="hourWrapper subcolorPointer2">
+                            <div class="hourHand subcolorPointer2"></div>
+                        </div>
+                        <div class="minuteWrapper colorPointer2">
+                            <div class="minuteHand colorPointer2"></div>
+                        </div>
+                        <div class="secondWrapper">
+                            <div class="secondHand"></div>
+                        </div>
+                        <div class="clockCircleCover">
+                            <div class="eqExplainWrapper">
+                                <span>Explaination</span>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </main>
+        </div>
+
+        <div class="devRoadmap subPage page">
+            <header class="color_devRoadmap">
+                <nav class="backIcon" id="devRoadmap" onclick="backIconClicked(this);">
+                    <span class="material-symbols-rounded triangle">play_arrow</span>
+                </nav>
+                <h1>Dev Roadmap</h1>
+                <div class="bar subcolorPointer3"></div>
+            </header>
+            <main>
+                <div class="roadmapBarWrapper">
+                    <div class="roadmapBarWrapper2 colorPointer3">
+                        <div class="roadmapBar">
+                            <div class="roadmapNav subcolorPointer3 roadmapNavTo1"></div>
+                            <div class="roadmapPoint" id="roadmapPoint1" onclick="roadmapPointClicked(this)"></div>
+                            <div class="roadmapPoint" id="roadmapPoint2" onclick="roadmapPointClicked(this)"></div>
+                            <div class="roadmapPoint" id="roadmapPoint3" onclick="roadmapPointClicked(this)"></div>
+                            <div class="roadmapPoint" id="roadmapPoint4" onclick="roadmapPointClicked(this)"></div>
+                        </div>
+                    </div>
+                </div>
+                <article class="upperTextBox">
+                    <div class="textBox" id="textBox1"></div>
+                    <div class="textBox" id="textBox2"></div>
+                    <div class="textBox" id="textBox3"></div>
+                    <div class="textBox" id="textBox4"></div>
+                </article>
+                <article class="lowerTextBox">
+                    <div class="textBoxMain"></div>
+                </article>
+            </main>
+        </div>
+
+        <nav class="signUp subPage2">
+            <article class="signUpWrapper colorPointer4">
+                <form name="memberFrm">
+                    <header class="color_signUp">
+                        <h2>Sign UP</h2>
+                        <nav class="signUpBackIcon" onclick="signUpCancel();">
+                            <span class="material-symbols-rounded signUpTriangle">play_arrow</span>
+                        </nav>
+                    </header>
+                    <main id="enroll">
+                        <input type="text" id="userId" class="inputBox" placeholder="ID" /><br>
+                        <input type="password" id="pwd" class="inputBox" placeholder="Password" /><br>
+                        <input type="password" id="pwdCheck" class="inputBox" placeholder="Confirm Password" /><br>
+                        <input type="email" id="email" class="inputBox" placeholder="E-mail" /><br>
+                        <input type="text" id="tel" class="phone inputBox" placeholder="Phone Number (000-0000-0000)" />
+                    </main>
+                    <footer class="warningBox2">
+                        <span class="warningMsg2">
+                            <span class="material-symbols-rounded warningMsgIcon2">warning</span>
+                            <span class="warningMsgText2"></span>
+                        </span>
+                        <span class="successBox">
+                            <span class="material-symbols-rounded successMsgIcon">done</span>
+                            <span class="successMsg">Sign Up Successful</span>
+                        </span>
+                    </footer>
+                    <button id="signUpButton" class="signUpButton subcolorPointer4">Sign Up!</button>
+                </form>
+            </article>
+
+        </nav>
+    </div>
+
+
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
